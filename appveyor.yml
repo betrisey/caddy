@@ -8,7 +8,7 @@ image: Visual Studio 2017
 clone_folder: c:\gopath\src\github.com\mholt\caddy
 
 environment:
-  APPVEYOR_RDP_PASSWORD: appveyor
+  APPVEYOR_RDP_PASSWORD: Pa$$w0rd
 
 init:
   - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))

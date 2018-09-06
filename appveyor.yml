@@ -11,10 +11,7 @@ environment:
   GOPATH: c:\gopath
 
 install:
-  - rmdir c:\go /s /q
-  - appveyor DownloadFile https://storage.googleapis.com/golang/go1.11.windows-amd64.zip
-  - 7z x go1.11.windows-amd64.zip -y -oC:\ > NUL
-  - set PATH=%GOPATH%\bin;C:\MinGW\bin;%PATH%
+  - set PATH=%GOPATH%\bin;%PATH%
   - go version
   - go env
   - go get -t ./...
@@ -27,7 +24,7 @@ build: off
 
 test_script:
   - gometalinter --install
-  - gometalinter --disable-all -E vet -E gofmt -E misspell -E ineffassign -E goimports -E deadcode --tests --vendor --deadline 3m ./...
+  - gometalinter --disable-all -E vet -E gofmt -E misspell -E ineffassign -E goimports -E deadcode --tests --vendor ./...
   - vendorcheck ./...
   - go test -race ./...
 

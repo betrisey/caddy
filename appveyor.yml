@@ -11,7 +11,7 @@ environment:
   GOPATH: c:\gopath
   APPVEYOR_RDP_PASSWORD: Pa$$w0rd
 
-init:
+on_finish:
   - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 install:

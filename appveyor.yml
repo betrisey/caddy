@@ -8,9 +8,6 @@ image: Visual Studio 2017
 clone_folder: c:\gopath\src\github.com\mholt\caddy
 
 environment:
-  GOPATH: c:\gopath
-
-environment:
   APPVEYOR_RDP_PASSWORD: appveyor
 
 init:
